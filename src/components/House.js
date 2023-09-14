@@ -6,7 +6,7 @@ import { RiMapPinLine } from "react-icons/ri";
 const House = ({ house }) => {
   return (
     <div className="flex flex-col">
-      <img src={House1} alt="" className="max-w-[300px] aspect-video mx-auto" />
+      <img src={house.image} alt="" className="max-w-[300px] aspect-video mx-auto" />
       <div className="max-w-[300px] w-full mx-auto bg-card_bg text-white p-5">
         <div className="font-light mb-4">7240C Argyle St. Lawndale, CA 90260</div>
         <div>
