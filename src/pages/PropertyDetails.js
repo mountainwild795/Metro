@@ -5,6 +5,7 @@ import { BiBed, BiBath, BiArea } from "react-icons/bi";
 import { RiMapPinLine } from "react-icons/ri";
 import { FaShower } from "react-icons/fa6";
 import { AiFillCar } from "react-icons/ai";
+import Carousel from "../components/Carousel";
 
 const PropertyDetails = () => {
   const { houses } = useContext(HouseContext);
@@ -16,7 +17,9 @@ const PropertyDetails = () => {
     <div className="min-h-[1800px]">
       <div className="container mx-auto">
         <div className="text-xl font-semibold mb-6">{house?.address}</div>
-        <div className="h-24">carasel</div>
+        <div>
+          <Carousel />
+        </div>
         <h1 className="my-8 text-xl font-semibold">title</h1>
         <div className="flex flex-col lg:flex-row lg:gap-6">
           <div className="lg:flex-1">
