@@ -13,13 +13,13 @@ import "swiper/css/navigation";
 
 import { Pagination, Navigation } from "swiper/modules";
 
-function Carousel() {
+function Carousel({ houseImage }) {
   const [swiperRef, setSwiperRef] = useState(null);
 
   return (
     <div>
       <div>
-        <img src="https://firebasestorage.googleapis.com/v0/b/metro-da27d.appspot.com/o/1.jpeg?alt=media&token=fef4c242-f367-4a12-9498-8032c605cc56" className="w-full h-[450px] lg:h-[550px]" alt="" />
+        <img src={houseImage} className="w-full h-[450px] lg:h-[550px]" alt="" />
       </div>
       <Swiper
         onSwiper={setSwiperRef}

@@ -16,11 +16,13 @@ const PropertyDetails = () => {
   return (
     <div className="min-h-[1800px]">
       <div className="container mx-auto">
-        <div className="text-xl font-semibold mb-6">{house?.address}</div>
+        <div className="text-xl font-semibold mb-6 mt-16">{house?.address}</div>
         <div>
-          <Carousel />
+          <Carousel houseImage={house?.image} />
         </div>
-        <h1 className="my-8 text-xl font-semibold">title</h1>
+        <h1 className="mt-16 mb-8 text-2xl font-semibold">
+          Luxurious {house?.bedrooms} bedroom {house?.bathrooms} bathroom for rent
+        </h1>
         <div className="flex flex-col lg:flex-row lg:gap-6">
           <div className="lg:flex-1">
             <p className="py-8">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aliquam ipsum veniam minima corrupti nemo laboriosam sunt omnis.</p>
