@@ -1,4 +1,5 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
+import { Spin } from "antd";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import carousel_1 from "../assets/img/carousel/31.jpeg";
@@ -16,10 +17,23 @@ import { Pagination, Navigation } from "swiper/modules";
 function Carousel({ houseImage }) {
   const [swiperRef, setSwiperRef] = useState(null);
 
+  const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    setLoading(true);
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 3000);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, []);
+
   return (
     <div>
       <div>
-        <img src={houseImage} className="w-full h-[450px] lg:h-[550px]" alt="" />
+        <Spin spinning={loading}>
+          <img src={houseImage} className="w-full h-[450px] lg:h-[550px]" alt="" />
+        </Spin>
       </div>
       <Swiper
         onSwiper={setSwiperRef}
