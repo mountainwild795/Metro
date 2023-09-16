@@ -17,7 +17,7 @@ const TestimonialBanner = () => {
   ];
 
   return (
-    <div className="bg-white p-8">
+    <div className="bg-white p-8 -mt-32 relative z-20">
       <h2 className="text-2xl font-bold mb-6 text-center">
         What people say about us
       </h2>

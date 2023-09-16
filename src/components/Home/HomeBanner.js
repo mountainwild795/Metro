@@ -1,6 +1,6 @@
 const HomeBanner = () => {
   return (
-    <div className="bg-primary_black text-white px-8 py-16 flex flex-col justify-center items-center space-y-12">
+    <div className="bg-primary_black text-white px-8 py-16 flex flex-col justify-center items-center space-y-12 relative -mb-16 z-20">
       <div className="flex flex-col sm:flex-row gap-6 mb-12 w-full max-w-screen-xl justify-center items-center">
         <div className="flex flex-col gap-6 text-justify">
           <p className="text-2xl">How we can help</p>
