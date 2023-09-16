@@ -23,6 +23,7 @@ module.exports = {
         primary_grey: "#f2f2f2",
         primary_black: "#262626",
         card_bg: "#262626",
+        reviewsquarecolour: "#FCE9E9",
       },
       boxShadow: {
         1: "0px 4px 30px rgba(0, 0, 0, 0.08)",
