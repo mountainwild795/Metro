@@ -1,3 +1,6 @@
+import React from "react";
+import picture from "./image/HiRiseBlueSky.jpeg";
+
 const TwoColumnComponent = () => {
   return (
     <div className="container mx-auto px-6 py-12 flex flex-wrap justify-center items-center min-h-screen">
@@ -36,7 +39,8 @@ const TwoColumnComponent = () => {
         </p>
       </div>
 
-      <div className="w-full md:w-1/2 px-4 grid grid-cols-2 gap-6 gap-y-8 pl-8 pr-8">
+      {/* Image Column with 10-degree rotation */}
+      <div className="w-full md:w-1/2 px-4 grid grid-cols-2 gap-6 gap-y-8 pl-8 pr-8 transform rotate-10">
         {[1, 2, 3, 4, 5, 6].map((i) => (
           <div
             key={i}
@@ -44,8 +48,8 @@ const TwoColumnComponent = () => {
             style={{ width: "315px", height: "470px" }}
           >
             <img
-              src={`path_to_your_image${i}.jpg`}
-              alt={`Placeholder ${i}`}
+              src={`${picture}`}
+              alt={`Hi rise ${i}`}
               className="object-cover w-full h-full"
             />
           </div>
