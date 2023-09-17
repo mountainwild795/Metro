@@ -37,17 +37,13 @@ const TwoColumnComponent = () => {
       </div>
 
       {/* Image Column with 10-degree rotation */}
-      <div
-        className="w-full md:w-2/3 px-4 grid grid-cols-2 gap-4 gap-y-4 pl-20 pr-20 transform rotate-10 sm:transform md:rotate-10"
-        style={{ transform: "rotate(-8deg)" }}
-      >
+      <div className="w-full md:w-2/3 px-4 grid grid-cols-2 gap-4 gap-y-4 pl-20 pr-20 sm:rotate-0 md:-rotate-8">
         {/* Left Column Images */}
-        <div className="left-images-col mt-10 pl-10">
+        <div className="left-images-col mt-11 pl-10">
           {[1, 2, 3].map((i) => (
             <div
               key={i}
-              className="bg-gray-200 rounded-lg mb-4"
-              style={{ width: "280px", height: "380px" }} // Adjusted the image size
+              className="bg-gray-200 rounded-lg mb-4 sm:w-64 sm:h-72 md:w-auto md:h-auto"
             >
               <img
                 src={`${picture}`}
@@ -59,12 +55,11 @@ const TwoColumnComponent = () => {
         </div>
 
         {/* Right Column Images */}
-        <div className="right-images-col">
+        <div className="right-images-col mt-3 pl-10">
           {[4, 5, 6].map((i) => (
             <div
               key={i}
-              className="bg-gray-200 rounded-lg mb-4"
-              style={{ width: "280px", height: "380px" }} // Adjusted the image size
+              className="bg-gray-200 rounded-lg mb-4 sm:w-64 sm:h-72 md:w-auto md:h-auto"
             >
               <img
                 src={`${picture}`}

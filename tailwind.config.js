@@ -28,6 +28,16 @@ module.exports = {
       boxShadow: {
         1: "0px 4px 30px rgba(0, 0, 0, 0.08)",
       },
+      rotate: {
+        5: "5deg",
+        8: "8deg",
+        10: "10deg",
+        15: "15deg",
+        "-5": "-5deg",
+        "-8": "-8deg",
+        "-10": "-10deg",
+        "-15": "-15deg",
+      },
     },
   },
   plugins: [],
