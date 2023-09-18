@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "../assets/img/logo.svg";
+import Logo from "../assets/img/logo.png";
 import { AiFillFacebook, AiFillInstagram, AiFillLinkedin, AiFillTwitterSquare } from "react-icons/ai";
 
 const Footer = () => {
@@ -22,7 +22,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="mt-8 w-[300px] lg:w-2/3">
-          <div className="mb-6">
+          <div className="mb-6 w-1/3">
             <img src={Logo} alt="logo" />
           </div>
           <div className="mb-6">
