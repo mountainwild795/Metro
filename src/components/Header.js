@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Logo from "../assets/img/logo.svg";
+import Logo from "../assets/img/logo.png";
 import { CiMenuBurger } from "react-icons/ci";
 
 const Header = () => {

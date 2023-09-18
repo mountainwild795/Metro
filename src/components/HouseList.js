@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import House from "./House";
 import { HouseContext } from "../contexts/HouseContext";
 import { Link } from "react-router-dom";
@@ -22,8 +22,8 @@ const HouseList = () => {
             houses.length !== 0 &&
             houses.map((house, index) => {
               return (
-                <Link to={`/property/${house._id}`} key={house.id}>
-                  <House key={house.id} house={house} />
+                <Link to={`/property/${house._id}`} key={house._id}>
+                  <House house={house} />
                 </Link>
               );
             })}
