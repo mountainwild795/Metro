@@ -5,8 +5,8 @@ import { AiFillFacebook, AiFillInstagram, AiFillLinkedin, AiFillTwitterSquare } 
 const Footer = () => {
   return (
     <div className="w-full lg:relative">
-      <div className="container max-sm:px-48 mx-auto flex flex-col lg:flex-row lg: gap-10">
-        <div className="flex flex-col bg-primary_black rounded-lg px-6 lg:flex-1 lg:absolute lg:bottom-0 lg:right-0 lg:w-[300px] lg:h-[320px] lg:rounded-bl-none lg:rounded-br-none lg:rounded-tr-none">
+      <div className="container mx-auto flex flex-col items-center lg:flex-row lg: gap-10">
+        <div className="flex flex-col bg-primary_black rounded-lg px-6 lg:flex-1 lg:absolute lg:bottom-0 lg:right-0 lg:w-[300px] lg:h-[320px] lg:rounded-bl-none lg:rounded-br-none lg:rounded-tr-none max-sm: w-[300px]">
           <div className="text-white py-4">Explore Site</div>
           <div className="flex text-primary gap-10">
             <ul>
@@ -21,7 +21,7 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        <div className="mt-8 lg:w-2/3">
+        <div className="mt-8 w-[300px] lg:w-2/3">
           <div className="mb-6">
             <img src={Logo} alt="logo" />
           </div>
