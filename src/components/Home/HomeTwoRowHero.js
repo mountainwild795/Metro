@@ -1,26 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import picture from "./image/HiRiseBlueSky.jpeg";
 
 const TwoColumnComponent = () => {
-  const [properties, setProperties] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    fetch("/housequeries") // Adjust this URL if your backend isn't running on the same domain/port
-      .then((response) => response.json())
-      .then((data) => {
-        setProperties(data);
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.error("Error fetching properties:", error);
-        setLoading(false);
-      });
-  }, []);
-
-  if (loading) {
-    return <p>Loading...</p>;
-  }
-
   return (
     <div className="container mx-auto px-6 py-12 flex flex-wrap justify-center items-center min-h-screen">
       {/* Text Column */}
@@ -59,14 +40,14 @@ const TwoColumnComponent = () => {
       <div className="w-full md:w-2/3 px-4 grid grid-cols-2 gap-4 gap-y-4 pl-20 pr-20 sm:rotate-0 md:-rotate-8">
         {/* Left Column Images */}
         <div className="left-images-col mt-11 pl-10">
-          {properties.slice(0, 3).map((property) => (
+          {[1, 2, 3].map((i) => (
             <div
-              key={property.id}
+              key={i}
               className="bg-gray-200 rounded-lg mb-4 sm:w-64 sm:h-72 md:w-auto md:h-auto"
             >
               <img
-                src={property.imageLg}
-                alt={property.name}
+                src={`${picture}`}
+                alt={`Hi rise ${i}`}
                 className="object-cover w-full h-full rounded-lg"
               />
             </div>
@@ -75,14 +56,14 @@ const TwoColumnComponent = () => {
 
         {/* Right Column Images */}
         <div className="right-images-col mt-3 pl-10">
-          {properties.slice(3, 6).map((property) => (
+          {[4, 5, 6].map((i) => (
             <div
-              key={property.id}
+              key={i}
               className="bg-gray-200 rounded-lg mb-4 sm:w-64 sm:h-72 md:w-auto md:h-auto"
             >
               <img
-                src={property.imageLg}
-                alt={property.name}
+                src={`${picture}`}
+                alt={`Hi rise ${i}`}
                 className="object-cover w-full h-full rounded-lg"
               />
             </div>
