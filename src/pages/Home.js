@@ -1,13 +1,19 @@
 import React from "react";
 
-import Banner from "../components/Banner";
-import HouseList from "../components/HouseList";
+import HomeHomeBanner from "../components/Home/HomeHomeBanner";
+import HomeHero from "../components/Home/HomeHero";
+import HomeTwoRowHero from "../components/Home/HomeTwoRowHero";
+import HomeReviewBanner from "../components/Home/HomeReviewBanner";
+import HomeFAQBanner from "../components/Home/HomeFAQBanner";
 
 const Home = () => {
   return (
     <div className="min-h-[1800px]">
-      <Banner />
-      <HouseList />
+      <HomeHero />
+      <HomeHomeBanner />
+      <HomeTwoRowHero />
+      <HomeReviewBanner />
+      <HomeFAQBanner />
     </div>
   );
 };
