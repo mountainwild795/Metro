@@ -7,10 +7,13 @@ const Search = () => {
   const addressRef = useRef();
   const { searchedHouses } = useContext(HouseContext);
   const handleSearch = () => {
+    const name = nameRef.current.value;
+    const country = countryRef.current.value;
+    const address = addressRef.current.value;
     const params = {
-      name: nameRef.current.value,
-      country: countryRef.current.value,
-      address: addressRef.current.value,
+      name,
+      country,
+      address,
     };
     searchedHouses(params);
   };
