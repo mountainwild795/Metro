@@ -32,7 +32,7 @@ function Carousel({ houseImage }) {
     <div>
       <div>
         <Spin spinning={loading}>
-          <img src={houseImage} className="w-full h-[450px] lg:h-[550px]" alt="" />
+          <img src={houseImage} loading="lazy" className="w-full h-[450px] lg:h-[550px]" alt="" />
         </Spin>
       </div>
       <Swiper
