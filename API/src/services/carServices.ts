@@ -1,29 +1,48 @@
 import { convertTable, riskKeywords } from "../util/CONSTANT";
 
+// import createHttpError from "http-errors";
+
 interface carValue {
-  car_value: number;
+  car_value: number | string;
 }
 
-export const getCarValue = (model: string, year: number): carValue => {
+export const getCarValue = (model: string, year: number | string): carValue => {
   let isInvalidModel = false;
   let total = 0;
 
-  const numArr: number[] = model.split("").map((char: string) => {
-    // let k: keyof typeof convertTable;
+  if (!model || !year) {
+    return { car_value: "request must include both model and year" };
+  }
 
-    if (isInvalidModel) return;
-    for (const k in convertTable) {
-      const keys = Object.keys(convertTable);
-      const index = keys.findIndex((i) => i === char);
-      if (index !== -1) {
-        if (k === char.toLowerCase()) {
-          return Number(convertTable[k]);
+  if (typeof year !== "number" || !Number.isInteger(year)) {
+    return { car_value: "Wrong data type: Year should be integer" };
+  }
+
+  if (year <= 0) {
+    return { car_value: "Invalid input: Negative Year" };
+  } else if (year < 1990 || year > 2023) {
+    return { car_value: "Invalid input: year should be between 1990 and 2023" };
+  }
+
+  const numArr: number[] = model
+    .toLowerCase()
+    .split("")
+    .map((char: string) => {
+      // let k: keyof typeof convertTable;
+
+      if (isInvalidModel) return;
+      for (const k in convertTable) {
+        const keys = Object.keys(convertTable);
+        const index = keys.findIndex((i) => i === char);
+        if (index !== -1) {
+          if (k === char.toLowerCase()) {
+            return Number(convertTable[k]);
+          }
+        } else {
+          isInvalidModel = true;
         }
-      } else {
-        isInvalidModel = true;
       }
-    }
-  }) as number[];
+    }) as number[];
 
   if (!isInvalidModel) {
     total = numArr.reduce((a, b) => {
@@ -35,10 +54,13 @@ export const getCarValue = (model: string, year: number): carValue => {
 };
 
 interface riskRating {
-  risk_rating: number;
+  risk_rating: number | string;
 }
 
 export const getRiskRating = (claim: string): riskRating => {
+  if (claim.length === 0) {
+    return { risk_rating: "invalid input: empty string" };
+  }
   const claimArr: string[] = claim.split(" ");
   let count = 0;
   claimArr.forEach((i) => {
