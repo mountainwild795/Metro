@@ -2,10 +2,13 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const mongoose = require("mongoose");
-require("dotenv").config();
+
+// Constants from provided .env values
+const PORT = 8080;
+const MONGODB_URI = "mongodb://host.docker.internal:27017/apihouses";
+const HOSTNAME = "0.0.0.0";
 
 // Connect to MongoDB
-const MONGODB_URI = process.env.MONGODB_URI;
 mongoose.connect(MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -28,7 +31,6 @@ const Image = mongoose.model("Image", imageSchema);
 
 // Initialize the express app
 const app = express();
-const PORT = process.env.PORT || 8080;
 
 // Middleware setup
 app.use(cors());
@@ -49,6 +51,6 @@ app.get("/image/:id", async (req, res) => {
 });
 
 // Start the server
-app.listen(PORT, () => {
+app.listen(PORT, HOSTNAME, () => {
   console.log(`Server started on http://localhost:${PORT}`);
 });
