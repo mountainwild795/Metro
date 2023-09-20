@@ -22,7 +22,7 @@ const TwoColumnComponent = () => {
         </h2>
         <a
           href="/your-link-path"
-          className="text-2xl mb-8 font-semibold tracking-wide text-blue-500 hover:text-blue-700 underline transition duration-300"
+          className="text-xl mb-8 font-semibold tracking-wide text-red-500 hover:text-red-700 underline transition duration-300"
         >
           Check out our property listings
         </a>
@@ -47,38 +47,31 @@ const TwoColumnComponent = () => {
       </div>
 
       {/* Image Column with 10-degree rotation */}
-      <div className="w-full md:w-2/3 px-4 grid grid-cols-2 gap-4 gap-y-4 pl-20 pr-20 sm:rotate-0 md:-rotate-8">
-        {/* Left Column Images */}
-        <div className="left-images-col mt-11 pl-10">
-          {imageIds.slice(0, 3).map((id, index) => (
-            <div
-              key={id}
-              className="bg-gray-200 rounded-lg mb-4 sm:w-64 sm:h-72 md:w-auto md:h-auto"
-            >
-              <img
-                src={`${imageUrlBase}${id}`}
-                alt={`Hi rise ${index + 1}`}
-                className="object-cover w-full h-full rounded-lg"
-              />
-            </div>
-          ))}
-        </div>
-
-        {/* Right Column Images */}
-        <div className="right-images-col mt-3 pl-10">
-          {imageIds.slice(3, 6).map((id, index) => (
-            <div
-              key={id}
-              className="bg-gray-200 rounded-lg mb-4 sm:w-64 sm:h-72 md:w-auto md:h-auto"
-            >
-              <img
-                src={`${imageUrlBase}${id}`}
-                alt={`Hi rise ${index + 4}`}
-                className="object-cover w-full h-full rounded-lg"
-              />
-            </div>
-          ))}
-        </div>
+      <div className="w-full md:w-2/3 px-2 md:px-40 grid grid-cols-2 gap-12 gap-y-3 pl-25 -pr-10 sm:rotate-0 md:-rotate-8">
+        {imageIds.slice(0, 4).map((id, index) => (
+          <div
+            key={id}
+            className="bg-gray-200 rounded-lg mb-4 w-11/12 sm:w-64 sm:h-72 md:w-auto md:h-auto" // Adjusted the width here
+          >
+            <img
+              src={`${imageUrlBase}${id}`}
+              alt={`Hi rise ${index + 1}`}
+              className="object-cover w-full h-full rounded-lg"
+            />
+          </div>
+        ))}
+        {imageIds.slice(4, 6).map((id, index) => (
+          <div
+            key={id}
+            className="hidden md:block bg-gray-200 rounded-lg mb-6 sm:w-4 sm:h-2 md:w-auto md:h-auto"
+          >
+            <img
+              src={`${imageUrlBase}${id}`}
+              alt={`Hi rise ${index + 5}`}
+              className="object-cover w-full h-full rounded-lg"
+            />
+          </div>
+        ))}
       </div>
     </div>
   );
