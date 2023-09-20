@@ -1,7 +1,17 @@
 import React from "react";
-import picture from "./image/HiRiseBlueSky.jpeg";
 
 const TwoColumnComponent = () => {
+  const imageUrlBase = "http://localhost:8080/image/";
+
+  const imageIds = [
+    "650a26ee56006f0926ea2bec",
+    "650a26ee56006f0926ea2bef",
+    "650a26ef56006f0926ea2bf1",
+    "650a26ef56006f0926ea2bf3",
+    "650a26ef56006f0926ea2bf5",
+    "650a26ef56006f0926ea2bf7",
+  ];
+
   return (
     <div className="container mx-auto px-6 py-12 flex flex-wrap justify-center items-center min-h-screen">
       {/* Text Column */}
@@ -40,14 +50,14 @@ const TwoColumnComponent = () => {
       <div className="w-full md:w-2/3 px-4 grid grid-cols-2 gap-4 gap-y-4 pl-20 pr-20 sm:rotate-0 md:-rotate-8">
         {/* Left Column Images */}
         <div className="left-images-col mt-11 pl-10">
-          {[1, 2, 3].map((i) => (
+          {imageIds.slice(0, 3).map((id, index) => (
             <div
-              key={i}
+              key={id}
               className="bg-gray-200 rounded-lg mb-4 sm:w-64 sm:h-72 md:w-auto md:h-auto"
             >
               <img
-                src={`${picture}`}
-                alt={`Hi rise ${i}`}
+                src={`${imageUrlBase}${id}`}
+                alt={`Hi rise ${index + 1}`}
                 className="object-cover w-full h-full rounded-lg"
               />
             </div>
@@ -56,14 +66,14 @@ const TwoColumnComponent = () => {
 
         {/* Right Column Images */}
         <div className="right-images-col mt-3 pl-10">
-          {[4, 5, 6].map((i) => (
+          {imageIds.slice(3, 6).map((id, index) => (
             <div
-              key={i}
+              key={id}
               className="bg-gray-200 rounded-lg mb-4 sm:w-64 sm:h-72 md:w-auto md:h-auto"
             >
               <img
-                src={`${picture}`}
-                alt={`Hi rise ${i}`}
+                src={`${imageUrlBase}${id}`}
+                alt={`Hi rise ${index + 4}`}
                 className="object-cover w-full h-full rounded-lg"
               />
             </div>
