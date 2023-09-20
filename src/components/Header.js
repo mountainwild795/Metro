@@ -7,9 +7,11 @@ const Header = () => {
   return (
     <header className="py-6 ">
       <div className="flex justify-between items-center px-8 mb-3">
-        <div>
-          <img src={Logo} alt="logo" />
-        </div>
+        <Link to="/">
+          <div>
+            <img src={Logo} alt="logo" />
+          </div>
+        </Link>
         <div className="flex items-center gap-x-2">
           <span className="text-primary">(123) 456-7890</span>
           <button className="hidden sm:flex bg-primary text-white py-3 px-8 rounded-lg">Give us call</button>

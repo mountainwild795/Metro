@@ -1,6 +1,22 @@
-import React from "react";
+import React, { useRef, useContext } from "react";
+import { HouseContext } from "../contexts/HouseContext";
 
 const Search = () => {
+  const nameRef = useRef();
+  const countryRef = useRef();
+  const addressRef = useRef();
+  const { searchedHouses } = useContext(HouseContext);
+  const handleSearch = () => {
+    const name = nameRef.current.value;
+    const country = countryRef.current.value;
+    const address = addressRef.current.value;
+    const params = {
+      name,
+      country,
+      address,
+    };
+    searchedHouses(params);
+  };
   return (
     <div className="bg-primary_black text-white px-20 py-16 flex flex-col justify-center">
       <div className="flex flex-col gap-6 mb-12">
@@ -8,9 +24,9 @@ const Search = () => {
         <p className="text-xl">Search and refine your listing results</p>
       </div>
       <div className="flex flex-col gap-16 mb-6 sm:flex-row sm:mb-20 sm:justify-around sm:gap-6">
-        <input className="flex-1 h-10  rounded-md" placeholder="" type="text" />
-        <input className="flex-1 h-10 rounded-md" placeholder="" type="text" />
-        <input className="flex-1 h-10 rounded-md" placeholder="" type="text" />
+        <input ref={nameRef} className="flex-1 h-10  rounded-md text-primary_black" placeholder="" type="text" />
+        <input ref={countryRef} className="flex-1 h-10 rounded-md text-primary_black" placeholder="" type="text" />
+        <input ref={addressRef} className="flex-1 h-10 rounded-md text-primary_black" placeholder="" type="text" />
       </div>
       <div className="flex flex-col gap-6 sm:flex-row sm:justify-between">
         <div className="flex flex-col gap-2">
@@ -22,7 +38,9 @@ const Search = () => {
             <label htmlFor="toggle" className="toggle-label block overflow-hidden h-6 rounded-full bg-gray-600 cursor-pointer"></label>
           </div>
         </div>
-        <button className="bg-primary text-white py-3 px-8 rounded-lg max-sm:mx-auto max-w-[220px]">Search</button>
+        <button onClick={handleSearch} className="bg-primary text-white py-3 px-8 rounded-lg max-sm:mx-auto max-w-[220px]">
+          Search
+        </button>
       </div>
     </div>
   );
